@@ -15,7 +15,7 @@ public class TestWalleApplication {
 
     @RequestMapping("/walle")
     public String walle(){
-        return "build walle success";
+        return "build walle success2";
     }
 
 }
