@@ -33,9 +33,9 @@ LABEL app="$projectName" version="$vendor" by="$projectName"
 COPY $projectName.jar $projectName.jar
 EXPOSE $targetPort
 #多环境使用
-#CMD -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar --spring.profiles.active=$ActiveProfiles
+#CMD java -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar --spring.profiles.active=$ActiveProfiles
 #单环境使用
-CMD -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar
+CMD java -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar
 ENTRYPOINT java
 EOF
  
