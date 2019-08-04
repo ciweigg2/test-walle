@@ -36,7 +36,7 @@ EXPOSE $targetPort
 #CMD java -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar --spring.profiles.active=$ActiveProfiles
 #单环境使用
 CMD java -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar
-ENTRYPOINT java
+#ENTRYPOINT java
 EOF
  
 #删除镜像下所有容器
