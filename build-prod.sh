@@ -27,7 +27,7 @@ FROM kdvolder/jdk8
 MAINTAINER $projectName
 VOLUME /tmp
 LABEL app="$projectName" version="$vendor" by="$projectName"
-COPY $projectName.jar $projectName.jar
+COPY /target/$projectName.jar $projectName.jar
 EXPOSE $targetPort
 #CMD -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar --spring.profiles.active=$ActiveProfiles
 CMD -Xmx100m -Xms100m -jar -Duser.timezone=GMT+08 $projectName.jar
