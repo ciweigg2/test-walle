@@ -13,7 +13,7 @@ oldVendor=1.0.0
 #镜像版本号
 vendor=1.0.0
 #项目名
-projectName=test-walle-0.0.1-SNAPSHOT
+projectName=test-walle-0.0.1
  
 #进入target文件夹
 #直接的构建是再容器里，这个是在 Jenkins 容器里，所以空间不一样
