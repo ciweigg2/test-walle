@@ -16,7 +16,7 @@ public class WallesController {
 
 	@RequestMapping("/walle")
 	public String walle(){
-		return "build walle success2 " + serverConfig.getUrl();
+		return "build walle success2 with jenkinsfile " + serverConfig.getUrl();
 	}
 
 }
