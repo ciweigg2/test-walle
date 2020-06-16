@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'walle'
-    }
-
-  }
+  agent any
   stages {
     stage('package') {
       steps {
@@ -12,8 +7,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    EXPOSE = '8081'
   }
 }
