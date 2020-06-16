@@ -15,5 +15,11 @@ pipeline {
       }
     }
 
+    stage('build') {
+      steps {
+        sh 'sh package-prod.sh'
+      }
+    }
+
   }
 }
