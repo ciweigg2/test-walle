@@ -1,28 +1,34 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven'
-      args '''-v /root/.m2:/root/.m2
--v /data/maven/apache-maven-3.6.0/conf/settings.xml:/data/maven/conf/settings.xml
---entrypoint='''
+    agent any
+    stages {
+        stage('package') {
+            agent {
+        		docker {
+            		        image 'maven'
+            		        args '-v /root/.m2:/root/.m2 -v /data/maven/apache-maven-3.6.0/conf/settings.xml:/data/maven/conf/settings.xml --entrypoint='
+        		}
+    	    }
+            steps {
+                script{
+                    echo "WORKSPACE：${env.WORKSPACE}"
+                    echo "Branch：${env.NODE_NAME}"
+                    if ("${env.NODE_NAME}" == "master") {
+                        sh "sh package-prod.sh"
+                    }
+                }
+            }
+        }
+        stage('build') {
+            agent none
+            steps {
+                script{
+                    echo "WORKSPACE：${env.WORKSPACE}"
+                    echo "Branch：${env.NODE_NAME}"
+                    if ("${env.NODE_NAME}" == "master") {
+                        sh "sh build-prod.sh"
+                    }
+                }
+            }
+        }
     }
-
-  }
-  stages {
-    stage('package') {
-      steps {
-        sh 'mvn clean install package \'-Dmaven.test.skip=true\''
-      }
-    }
-
-    stage('build') {
-      steps {
-        sh 'sh build-prod.sh'
-      }
-    }
-
-  }
-  environment {
-    testaaaaa = '3213123123'
-  }
 }
