@@ -17,7 +17,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'sh package-prod.sh'
+        sh 'sh build-prod.sh'
       }
     }
 
