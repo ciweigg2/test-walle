@@ -10,19 +10,14 @@ pipeline {
   }
   stages {
     stage('package') {
-      parallel {
-        stage('package') {
-          steps {
-            sh 'mvn clean install package \'-Dmaven.test.skip=true\''
-          }
-        }
+      steps {
+        sh 'mvn clean install package \'-Dmaven.test.skip=true\''
+      }
+    }
 
-        stage('build') {
-          steps {
-            sh 'sh build-prod.sh'
-          }
-        }
-
+    stage('build') {
+      steps {
+        sh 'sh build-prod.sh'
       }
     }
 
