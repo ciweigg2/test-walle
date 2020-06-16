@@ -23,7 +23,7 @@ echo "${testaaaaa}"
 #多模块使用
 #cd $WORKSPACE@2/$projectName/target
 #单模块使用
-cd $WORKSPACE@2/target
+cd $WORKSPACE/target
 
 #创建Dockerfile文件
 #-jar -Duser.timezone=GMT+08 保证生成出来的容器的时区与服务器一致
