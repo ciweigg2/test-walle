@@ -22,4 +22,7 @@ pipeline {
     }
 
   }
+  environment {
+    testaaaaa = '3213123123'
+  }
 }
